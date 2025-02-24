@@ -1,29 +1,38 @@
-// create a home component with a simple message
+import { Link, NavLink, useNavigate } from "react-router";
+import styled from "styled-components";
 
-import { NavLink } from "react-router";
+const StyleButton = styled.button`
+  padding: 10px 20px;
+  border: 2px solid blue;
+  background-color: white;
+  color: blue;
+`;
 
 const Home = () => {
+  let navigate = useNavigate();
+
+  const handleNavigateProject = () => {
+    console.log("Move to projects page");
+
+    navigate("/about/project");
+  };
+
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <NavLink to="projects">Projects</NavLink>
-      <br />
-      <NavLink to="/dashboard" end>
-        home
+      <h1>Home page</h1>
+
+      <NavLink to="/about" end>
+        About page
       </NavLink>
-      <br />
-      <NavLink to="/concerts">All Concerts</NavLink>
-      <br />
-      <NavLink to="/account">Account</NavLink>
 
       <br />
 
-      <NavLink
-        to="/messages"
-        className={({ isActive }) => (isActive ? "text-red-500" : "text-black")}
-      >
-        Messages
-      </NavLink>
+      <Link to="/contact-me">Contact Me</Link>
+
+      <br />
+      <StyleButton onClick={handleNavigateProject}>
+        Move to projects page
+      </StyleButton>
     </div>
   );
 };
