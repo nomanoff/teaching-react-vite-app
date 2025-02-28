@@ -1,3 +1,4 @@
+import { useCallback, useContext, useEffect, useRef } from "react";
 import { Route, Routes } from "react-router";
 
 import About from "./pages/About";
@@ -8,6 +9,12 @@ import ContactMe from "./pages/ContactMe";
 import Projects from "./pages/Projects";
 
 function App() {
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiKey = import.meta.env.VITE_API_KEY;
+
+  console.log("API URL:", apiUrl);
+  console.log("API Key:", apiKey);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
