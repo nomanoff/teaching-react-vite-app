@@ -10,7 +10,7 @@ import Projects from "./pages/Projects";
 
 function App() {
   const apiUrl = import.meta.env.VITE_API_URL;
-  const apiKey = import.meta.env.VITE_API_KEY;
+  // const apiKey = import.meta.env.VITE_API_KEY;
 
   console.log("API URL:", apiUrl);
 
